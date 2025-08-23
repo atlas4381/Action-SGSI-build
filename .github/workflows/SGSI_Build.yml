@@ -49,13 +49,14 @@ jobs:
           sudo -E apt-get clean
           df -h
 
+      - name: Configuration Environment‌‌...
+        run: |
+          sudo apt-get install -y git wget git zip unzip curl axel python2 git p7zip curl wget unace unrar zip unzip p7zip-full p7zip-rar sharutils uudeview mpack arj cabextract file-roller aptitude device-tree-compiler squashfs-tools liblzma-dev liblz4-tool gawk aria2 selinux-utils
+          sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1000
+
       - name: Get the SGSI tool‌‌...
         run: |
           git clone --recurse-submodules https://github.com/xiaoxindada/SGSI-build-tool.git -b 11 $GITHUB_WORKSPACE/Tool-SGSI-build
-
-      - name: Configuration Environment‌‌...
-        run: |
-          sudo bash $GITHUB_WORKSPACE/Tool-SGSI-build/setup.sh
 
       - name: Replace custom condensed content...
         run: |
